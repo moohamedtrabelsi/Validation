@@ -10,5 +10,6 @@ package com.Ecole.Models;
  * @author Mohamed Trabelsi
  */
 public class Branche {
+    private int id;
 
 }
