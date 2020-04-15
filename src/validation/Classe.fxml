@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="464.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Ecole.Controller.ClasseController">
+   <children>
+      <TabPane layoutY="102.0" prefHeight="362.0" prefWidth="715.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Ajout Classes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="select_branche" layoutX="47.0" layoutY="46.0" prefWidth="150.0" promptText="Branche" />
+                        <TextField fx:id="nom_classe" layoutX="48.0" layoutY="110.0" promptText="Nom" />
+                        <Button fx:id="ajout_classe" layoutX="57.0" layoutY="166.0" mnemonicParsing="false" onAction="#AjouterClasse" prefHeight="26.0" prefWidth="130.0" text="Valider" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Gerer Classes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="afficher_classe" prefHeight="200.0" prefWidth="715.0">
+                          <columns>
+                            <TableColumn fx:id="afficher_classe_id" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="afficher_classe_nom" onEditCommit="#UpdateNom" prefWidth="86.4000015258789" text="Nom" />
+                              <TableColumn fx:id="afficher_classe_nbr" prefWidth="141.60003662109375" text="Nombre d'etudiants" />
+                              <TableColumn fx:id="afficher_classe_branche" prefWidth="146.4000244140625" text="Branche" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="deleteClasse" layoutX="306.0" layoutY="231.0" mnemonicParsing="false" onAction="#DeleteClasse" text="Supprimer la classe" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="gestionEtudiant" layoutX="50.0" layoutY="34.0" mnemonicParsing="false" onAction="#GererEtudiants" text="Gestion des Etudiants" />
+      <Button fx:id="gestionEtudiant1" layoutX="227.0" layoutY="34.0" mnemonicParsing="false" onAction="#GererBranches" text="Gestion des branches" />
+   </children>
+</AnchorPane>
